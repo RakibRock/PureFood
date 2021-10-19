@@ -1,0 +1,16 @@
+.bg {
+  background-color: rgb(255, 250, 240);
+}
+.left-text {
+  padding: 10% 6%;
+}
+.text {
+  font-size: 50px;
+}
+.btn-custom {
+  background-color: rgb(248, 191, 86);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-top: 25px;
+}

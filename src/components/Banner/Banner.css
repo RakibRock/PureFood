@@ -1,0 +1,11 @@
+.background {
+  background-image: url("");
+  background-color: rgba(255, 166, 0, 0.828);
+}
+.btn-custom-banner {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: rgb(253, 231, 190);
+  font-size: 20px;
+}

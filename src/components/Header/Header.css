@@ -1,0 +1,17 @@
+.right-nav a {
+  text-decoration: none;
+  padding-right: 50px;
+}
+#brand-pure {
+  color: rgb(15, 248, 15);
+  font-size: 35px;
+  font-weight: 700;
+}
+#brand-food {
+  font-weight: 300;
+  color: rgb(253, 205, 114);
+}
+nav a {
+  font-weight: 400;
+  font-size: 20px;
+}
