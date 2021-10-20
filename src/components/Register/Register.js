@@ -88,17 +88,19 @@ const Register = () => {
                 Please {isLogin ? "Log in" : "Register"}
               </h3>
 
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Name</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Enter your name"
-                  required
-                />
-                <Form.Text className="text-muted">
-                  Your details are safe with us
-                </Form.Text>
-              </Form.Group>
+              {!isLogin && (
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>Name</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter your name"
+                    required
+                  />
+                  <Form.Text className="text-muted">
+                    Your details are safe with us
+                  </Form.Text>
+                </Form.Group>
+              )}
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
