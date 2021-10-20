@@ -2,7 +2,11 @@ import Button from "@restart/ui/esm/Button";
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import "./Register.css";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import firebaseInitialization from "../../Firebase/firebase.init";
 
 const Register = () => {
@@ -13,18 +17,51 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isLogin, setIsLogin] = useState(false);
   //event handler
   const handleRegistration = (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password).then((result) => {
-      const user = result.user;
-      console.log(user);
-      if (password.length < 6) {
-        setError("Password must be atleast 6 chars");
-        return;
-      }
-    });
-    console.log(email, password);
+    if (!email) {
+      setError("Please enter an email");
+      return;
+    }
+    if (!password) {
+      setError("Please enter a password");
+      return;
+    }
+    if (password.length < 6) {
+      setError("Password must be atleast 6 chars");
+      return;
+    }
+    //if logged in then call signInUser, else call createNewUser
+    //conditional function call
+    isLogin ? signInUser() : createNewUser(email, password);
+  };
+
+  const signInUser = (email, password) => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        setError("");
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
+
+  const createNewUser = (email, password) => {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        console.log(email, password);
+        //if no error, then an empty error message
+        setError("");
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   };
 
   const handleEmailChange = (e) => {
@@ -32,6 +69,10 @@ const Register = () => {
   };
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
+  };
+
+  const toggleLogin = (e) => {
+    setIsLogin(e.target.checked);
   };
 
   return (
@@ -43,10 +84,17 @@ const Register = () => {
               onSubmit={handleRegistration}
               className="bg-custom p-4 mt-5 rounded"
             >
-              <h3 className=" text-danger">Please Register</h3>
+              <h3 className=" text-danger">
+                Please {isLogin ? "Log in" : "Register"}
+              </h3>
+
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Name</Form.Label>
-                <Form.Control type="text" placeholder="Enter your name" />
+                <Form.Control
+                  type="text"
+                  placeholder="Enter your name"
+                  required
+                />
                 <Form.Text className="text-muted">
                   Your details are safe with us
                 </Form.Text>
@@ -57,7 +105,7 @@ const Register = () => {
                   onBlur={handleEmailChange}
                   type="email"
                   placeholder="Enter email"
-                  recquired
+                  required
                 />
                 <Form.Text className="text-muted">
                   We'll never share your email with anyone else.
@@ -70,15 +118,26 @@ const Register = () => {
                   onBlur={handlePasswordChange}
                   type="password"
                   placeholder="Password"
-                  recquired
+                  required
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
+                <Form.Check
+                  onChange={toggleLogin}
+                  type="checkbox"
+                  label="Already registered?"
+                />
               </Form.Group>
-              <Form.Text className="text-danger">{error}</Form.Text>
-              <Button className="btn-custom" variant="primary" type="submit">
-                Submit
+
+              <p className="text-danger bold">{error}</p>
+
+              <Button
+                onClick={handleRegistration}
+                className="btn-custom"
+                variant="primary"
+                type="submit"
+              >
+                {isLogin ? "Login" : "Register"}
               </Button>
               <span> or </span>
               <Button className="btn-custom" variant="primary" type="submit">
