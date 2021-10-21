@@ -58,7 +58,7 @@ const Header = () => {
                       <span>{user.displayName}</span> LogOut
                     </Nav.Link>
                   ) : (
-                    <Nav.Link as={NavLink} to="login">
+                    <Nav.Link as={NavLink} to="/register">
                       LogIn
                     </Nav.Link>
                   )}

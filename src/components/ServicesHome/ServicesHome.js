@@ -24,7 +24,7 @@ const ServicesHome = () => {
                     training.
                   </Card.Text>
                 </Card.Body>
-                <NavLink to="/service1" className="text-center">
+                <NavLink to="/service1" className="text-center btn btn-warning">
                   View Details
                 </NavLink>
               </Card>
@@ -43,7 +43,7 @@ const ServicesHome = () => {
                     disease.
                   </Card.Text>
                 </Card.Body>
-                <NavLink to="/service2" className="text-center">
+                <NavLink to="/service2" className="text-center btn btn-warning">
                   View Details
                 </NavLink>
               </Card>
@@ -62,7 +62,7 @@ const ServicesHome = () => {
                     a package.
                   </Card.Text>
                 </Card.Body>
-                <NavLink to="/service3" className="text-center">
+                <NavLink to="/service3" className="text-center btn btn-warning">
                   View Details
                 </NavLink>
               </Card>
@@ -81,7 +81,7 @@ const ServicesHome = () => {
                     a package.
                   </Card.Text>
                 </Card.Body>
-                <NavLink to="/service4" className="text-center">
+                <NavLink to="/service4" className="text-center btn btn-warning">
                   View Details
                 </NavLink>
               </Card>
@@ -100,7 +100,7 @@ const ServicesHome = () => {
                     a package.
                   </Card.Text>
                 </Card.Body>
-                <NavLink to="/service5" className="text-center">
+                <NavLink to="/service5" className="text-center btn btn-warning">
                   View Details
                 </NavLink>
               </Card>
@@ -119,14 +119,20 @@ const ServicesHome = () => {
                     a package.
                   </Card.Text>
                 </Card.Body>
-                <NavLink to="/service6" className="text-center">
+                <NavLink
+                  to="/service6  "
+                  className="text-center btn btn-warning"
+                >
                   View Details
                 </NavLink>
               </Card>
             </Col>
           </Row>
           <div className="row">
-            <NavLink to="/services" className="text-center">
+            <NavLink
+              to="/services"
+              className="text-center btn btn-warning border mt-5 "
+            >
               View all services
             </NavLink>
           </div>
