@@ -43,7 +43,7 @@ const ServicesHome = () => {
                     disease.
                   </Card.Text>
                 </Card.Body>
-                <NavLink to="/" className="text-center">
+                <NavLink to="/service2" className="text-center">
                   View Details
                 </NavLink>
               </Card>
@@ -62,7 +62,7 @@ const ServicesHome = () => {
                     a package.
                   </Card.Text>
                 </Card.Body>
-                <NavLink to="/" className="text-center">
+                <NavLink to="/service3" className="text-center">
                   View Details
                 </NavLink>
               </Card>
@@ -81,7 +81,7 @@ const ServicesHome = () => {
                     a package.
                   </Card.Text>
                 </Card.Body>
-                <NavLink to="/" className="text-center">
+                <NavLink to="/service4" className="text-center">
                   View Details
                 </NavLink>
               </Card>
@@ -100,7 +100,7 @@ const ServicesHome = () => {
                     a package.
                   </Card.Text>
                 </Card.Body>
-                <NavLink to="/" className="text-center">
+                <NavLink to="/service5" className="text-center">
                   View Details
                 </NavLink>
               </Card>
@@ -119,7 +119,7 @@ const ServicesHome = () => {
                     a package.
                   </Card.Text>
                 </Card.Body>
-                <NavLink to="/" className="text-center">
+                <NavLink to="/service6" className="text-center">
                   View Details
                 </NavLink>
               </Card>

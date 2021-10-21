@@ -12,6 +12,11 @@ import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import AuthProvider from "./context/AuthProvider";
 import Service1 from "./components/Services/Service1";
+import Service2 from "./components/Services/Service2";
+import Service3 from "./components/Services/Service3";
+import Service4 from "./components/Services/Service4";
+import Service5 from "./components/Services/Service5";
+import Service6 from "./components/Services/Service6";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 function App() {
@@ -32,6 +37,21 @@ function App() {
             </Route>
             <PrivateRoute path="/service1">
               <Service1></Service1>
+            </PrivateRoute>
+            <PrivateRoute path="/service2">
+              <Service2></Service2>
+            </PrivateRoute>
+            <PrivateRoute path="/service3">
+              <Service3></Service3>
+            </PrivateRoute>
+            <PrivateRoute path="/service4">
+              <Service4></Service4>
+            </PrivateRoute>
+            <PrivateRoute path="/service5">
+              <Service5></Service5>
+            </PrivateRoute>
+            <PrivateRoute path="/service6">
+              <Service6></Service6>
             </PrivateRoute>
             <Route path="/about">
               <About></About>
