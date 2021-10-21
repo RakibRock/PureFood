@@ -86,7 +86,7 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="bg-reg">
       <div className="container-fluid pb-5">
         <div className="row">
           <div className="col-md-4 mx-auto">
