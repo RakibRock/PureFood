@@ -11,6 +11,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import AuthProvider from "./context/AuthProvider";
+import Service1 from "./components/Services/Service1";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
@@ -28,6 +30,9 @@ function App() {
             <Route path="/services">
               <Services></Services>
             </Route>
+            <PrivateRoute path="/service1">
+              <Service1></Service1>
+            </PrivateRoute>
             <Route path="/about">
               <About></About>
             </Route>

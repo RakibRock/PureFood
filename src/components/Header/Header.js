@@ -32,8 +32,8 @@ const Header = () => {
                     <NavDropdown.Item as={NavLink} to="/services">
                       All Services
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">
-                      Another action
+                    <NavDropdown.Item as={NavLink} to="/service1">
+                      Service1
                     </NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.3">
                       Something

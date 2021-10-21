@@ -14,7 +14,7 @@ const ServicesHome = () => {
               <Card>
                 <Card.Img
                   variant="top"
-                  src="https://www.lifefitness.com/resource/image/37496/portrait_ratio1x1/400/400/5cbd7a48ed5dd9647aad3d2bd2562c90/Bu/lfa-trainers-fitfair2019-20191122-wf2-8495-2-.jpg\"
+                  src="https://us.123rf.com/450wm/volff/volff1901/volff190100224/116035024-food-pyramid-or-diet-pyramid-diagram-presents-basic-food-groups-.jpg?ver=6"
                 />
                 <Card.Body>
                   <Card.Title>Workout Routine</Card.Title>
@@ -24,7 +24,7 @@ const ServicesHome = () => {
                     training.
                   </Card.Text>
                 </Card.Body>
-                <NavLink to="/" className="text-center">
+                <NavLink to="/service1" className="text-center">
                   View Details
                 </NavLink>
               </Card>
@@ -52,7 +52,64 @@ const ServicesHome = () => {
               <Card>
                 <Card.Img
                   variant="top"
-                  src="https://integrisok.com/-/media/blog/aa/complete-proteins.ashx?as=1&mw=720&usecustomfunctions=1&relativeresize=1&revision=46c0a7a4-320d-4a96-a519-386a3c27215b&hash=F89C4EEB23EB110C74342E962B4E58FAD9D5CE7C%5C"
+                  src="https://us.123rf.com/450wm/ifong/ifong1008/ifong100800003/7499029-food-pyramid-represents-way-of-healthy-eating.jpg?ver=6"
+                />
+                <Card.Body>
+                  <Card.Title>Personalized Nutrition</Card.Title>
+                  <Card.Text>
+                    Personalized nutrition is rather defined as an approach that
+                    counts on details of an individual characteristics to evolve
+                    a package.
+                  </Card.Text>
+                </Card.Body>
+                <NavLink to="/" className="text-center">
+                  View Details
+                </NavLink>
+              </Card>
+            </Col>
+            <Col>
+              <Card>
+                <Card.Img
+                  variant="top"
+                  src="https://us.123rf.com/450wm/ifong/ifong1008/ifong100800003/7499029-food-pyramid-represents-way-of-healthy-eating.jpg?ver=6"
+                />
+                <Card.Body>
+                  <Card.Title>Personalized Nutrition</Card.Title>
+                  <Card.Text>
+                    Personalized nutrition is rather defined as an approach that
+                    counts on details of an individual characteristics to evolve
+                    a package.
+                  </Card.Text>
+                </Card.Body>
+                <NavLink to="/" className="text-center">
+                  View Details
+                </NavLink>
+              </Card>
+            </Col>
+            <Col>
+              <Card>
+                <Card.Img
+                  variant="top"
+                  src="https://us.123rf.com/450wm/ifong/ifong1008/ifong100800003/7499029-food-pyramid-represents-way-of-healthy-eating.jpg?ver=6"
+                />
+                <Card.Body>
+                  <Card.Title>Personalized Nutrition</Card.Title>
+                  <Card.Text>
+                    Personalized nutrition is rather defined as an approach that
+                    counts on details of an individual characteristics to evolve
+                    a package.
+                  </Card.Text>
+                </Card.Body>
+                <NavLink to="/" className="text-center">
+                  View Details
+                </NavLink>
+              </Card>
+            </Col>
+            <Col>
+              <Card>
+                <Card.Img
+                  variant="top"
+                  src="https://us.123rf.com/450wm/ifong/ifong1008/ifong100800003/7499029-food-pyramid-represents-way-of-healthy-eating.jpg?ver=6"
                 />
                 <Card.Body>
                   <Card.Title>Personalized Nutrition</Card.Title>
