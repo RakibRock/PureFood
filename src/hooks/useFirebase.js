@@ -5,6 +5,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 
 firebaseInitialization();
@@ -29,6 +30,15 @@ const useFirebase = () => {
       setUser({});
     });
   };
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log("inside state changed", user);
+        setUser(user);
+      }
+    });
+  }, []);
 
   return {
     user,

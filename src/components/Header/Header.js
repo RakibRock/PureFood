@@ -5,7 +5,7 @@ import "./Header.css";
 import useFirebase from "../../hooks/useFirebase";
 
 const Header = () => {
-  const { user } = useFirebase();
+  const { user, logOut } = useFirebase();
   console.log(user.email);
   return (
     <div className="container-fluid">
@@ -49,7 +49,7 @@ const Header = () => {
                     Register
                   </Nav.Link>
                   {user.email ? (
-                    <Nav.Link as={NavLink} to="">
+                    <Nav.Link as={NavLink} to="" onClick={logOut}>
                       LogOut
                     </Nav.Link>
                   ) : (
