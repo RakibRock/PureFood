@@ -6,6 +6,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import firebaseInitialization from "../../Firebase/firebase.init";
 
@@ -14,6 +15,7 @@ const Register = () => {
   const auth = getAuth();
 
   //declaring individual states for email and password
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -43,7 +45,6 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        setError("");
       })
       .catch((error) => {
         setError(error.message);
@@ -56,6 +57,7 @@ const Register = () => {
         const user = result.user;
         console.log(user);
         console.log(email, password);
+        setUserName();
         //if no error, then an empty error message
         setError("");
       })
@@ -64,6 +66,13 @@ const Register = () => {
       });
   };
 
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+
+  const setUserName = (e) => {
+    updateProfile(auth.currentUser, { displayName: name }).then(() => {});
+  };
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -93,6 +102,7 @@ const Register = () => {
                   <Form.Label>Name</Form.Label>
                   <Form.Control
                     type="text"
+                    onBlur={handleNameChange}
                     placeholder="Enter your name"
                     required
                   />
