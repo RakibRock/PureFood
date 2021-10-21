@@ -6,7 +6,7 @@ const ServicesHome = () => {
   return (
     <div className="container-fluid">
       <div className="row">
-        <h6 className="pt-5 text-center">What We Do</h6>
+        <h6 className="pt-5 text-center fw-normal">What We Do</h6>
         <h1 className="pb-4 text-center">Services</h1>
         <div className="col-md-12 pt-3 ps-5 pe-5">
           <Row xs={1} md={3} className="g-4">

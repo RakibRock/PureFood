@@ -10,6 +10,8 @@ import {
 } from "firebase/auth";
 
 import useFirebase from "../../hooks/useFirebase";
+import Footer from "../Footer/Footer";
+import Banner from "../Banner/Banner";
 
 const Register = () => {
   const { signInUsingGoogle } = useFirebase();
@@ -23,7 +25,7 @@ const Register = () => {
   const [error, setError] = useState("");
   const [isLogin, setIsLogin] = useState(false);
   //event handler
-  const handleRegistration = (e) => {
+  const handleRegistrationOrLogin = (e) => {
     e.preventDefault();
 
     if (password.length < 6) {
@@ -32,10 +34,11 @@ const Register = () => {
     }
     //if logged in then call signInUser, else call createNewUser
     //conditional function call
-    isLogin ? signInUser() : createNewUser(email, password);
+    isLogin ? signInUser(email, password) : createNewUser(email, password);
   };
 
   const signInUser = (email, password) => {
+    console.log(email, password);
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         const user = result.user;
@@ -62,6 +65,7 @@ const Register = () => {
   };
 
   const handleNameChange = (e) => {
+    console.log(e.target.value);
     setName(e.target.value);
   };
 
@@ -69,9 +73,11 @@ const Register = () => {
     updateProfile(auth.currentUser, { displayName: name }).then(() => {});
   };
   const handleEmailChange = (e) => {
+    console.log(e.target.value);
     setEmail(e.target.value);
   };
   const handlePasswordChange = (e) => {
+    console.log(e.target.value);
     setPassword(e.target.value);
   };
 
@@ -81,11 +87,11 @@ const Register = () => {
 
   return (
     <div>
-      <div className="container-fluid">
+      <div className="container-fluid pb-5">
         <div className="row">
           <div className="col-md-4 mx-auto">
             <Form
-              onSubmit={handleRegistration}
+              onSubmit={handleRegistrationOrLogin}
               className="bg-custom p-4 mt-5 rounded"
             >
               <h3 className=" text-danger">
@@ -139,7 +145,7 @@ const Register = () => {
               <p className="text-danger bold">{error}</p>
 
               <Button
-                onClick={handleRegistration}
+                onClick={handleRegistrationOrLogin}
                 className="btn-custom"
                 variant="primary"
                 type="submit"
@@ -159,6 +165,8 @@ const Register = () => {
           </div>
         </div>
       </div>
+      <Banner></Banner>
+      <Footer></Footer>
     </div>
   );
 };

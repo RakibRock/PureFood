@@ -1,0 +1,13 @@
+.bg-color {
+  background-color: rgb(5, 5, 5);
+}
+#brand-food {
+  text-decoration: none;
+  padding-top: 5px;
+}
+
+#brand-food:hover {
+  background-color: goldenrod;
+  border-radius: 7px;
+  color: black;
+}

@@ -1,8 +1,9 @@
 .bg {
-  background-color: rgb(255, 250, 240);
+  background-color: rgb(255, 227, 170);
 }
 .left-text {
-  padding: 10% 6%;
+  padding-top: 14%;
+  padding-left: 12%;
 }
 .text {
   font-size: 50px;
@@ -13,4 +14,10 @@
   border-radius: 5px;
   padding: 5px 10px;
   margin-top: 25px;
+}
+
+#hero-btn {
+  text-decoration: none;
+  color: rgb(184, 137, 18);
+  background-color: rgb(255, 250, 238);
 }

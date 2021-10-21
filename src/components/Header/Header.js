@@ -2,8 +2,11 @@ import React from "react";
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
+import useFirebase from "../../hooks/useFirebase";
 
 const Header = () => {
+  const { user } = useFirebase();
+  console.log(user.email);
   return (
     <div className="container-fluid">
       <div className="row">
@@ -45,9 +48,15 @@ const Header = () => {
                   <Nav.Link as={NavLink} to="register">
                     Register
                   </Nav.Link>
-                  <Nav.Link as={NavLink} eventKey={2} to="login">
-                    LogIn
-                  </Nav.Link>
+                  {user.email ? (
+                    <Nav.Link as={NavLink} to="">
+                      LogOut
+                    </Nav.Link>
+                  ) : (
+                    <Nav.Link as={NavLink} to="login">
+                      LogIn
+                    </Nav.Link>
+                  )}
                 </Nav>
               </Navbar.Collapse>
             </Container>
