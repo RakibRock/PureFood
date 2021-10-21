@@ -8,10 +8,12 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import firebaseInitialization from "../../Firebase/firebase.init";
+
+import useFirebase from "../../hooks/useFirebase";
 
 const Register = () => {
-  firebaseInitialization();
+  const { signInUsingGoogle } = useFirebase();
+
   const auth = getAuth();
 
   //declaring individual states for email and password
@@ -23,14 +25,7 @@ const Register = () => {
   //event handler
   const handleRegistration = (e) => {
     e.preventDefault();
-    if (!email) {
-      setError("Please enter an email");
-      return;
-    }
-    if (!password) {
-      setError("Please enter a password");
-      return;
-    }
+
     if (password.length < 6) {
       setError("Password must be atleast 6 chars");
       return;
@@ -152,7 +147,12 @@ const Register = () => {
                 {isLogin ? "Login" : "Register"}
               </Button>
               <span> or </span>
-              <Button className="btn-custom" variant="primary" type="submit">
+              <Button
+                onClick={signInUsingGoogle}
+                className="btn-custom"
+                variant="primary"
+                type="submit"
+              >
                 Sign In With Google
               </Button>
             </Form>

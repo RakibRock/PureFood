@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Banner from "../Banner/Banner";
 import ServicesHome from "../ServicesHome/ServicesHome";
 import "./Home.css";
@@ -23,8 +24,8 @@ const Home = () => {
               <h1 className="text text-start">
                 Eat Mindfully, Sweat Often & Self Love Always
               </h1>
-              <div className=""></div>
-              <button className="btn-custom d-flex">Learn More</button>
+
+              <Link to="about">Learn More</Link>
             </div>
           </div>
           <div className="right-img col-md-6">
