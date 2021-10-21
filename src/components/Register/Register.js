@@ -9,12 +9,12 @@ import {
   updateProfile,
 } from "firebase/auth";
 
-import useFirebase from "../../hooks/useFirebase";
 import Footer from "../Footer/Footer";
 import Banner from "../Banner/Banner";
+import useAuth from "../../hooks/useAuth";
 
 const Register = () => {
-  const { signInUsingGoogle } = useFirebase();
+  const { signInUsingGoogle } = useAuth();
 
   const auth = getAuth();
 

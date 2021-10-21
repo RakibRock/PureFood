@@ -2,11 +2,11 @@ import React from "react";
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
-import useFirebase from "../../hooks/useFirebase";
+import useAuth from "../../hooks/useAuth";
 
 const Header = () => {
-  const { user, logOut } = useFirebase();
-  console.log(user.email);
+  const { user, logOut } = useAuth();
+  console.log(user.email, user.displayName);
   return (
     <div className="container-fluid">
       <div className="row">
@@ -49,8 +49,13 @@ const Header = () => {
                     Register
                   </Nav.Link>
                   {user.email ? (
-                    <Nav.Link as={NavLink} to="" onClick={logOut}>
-                      LogOut
+                    <Nav.Link
+                      className="text-white"
+                      as={NavLink}
+                      to=""
+                      onClick={logOut}
+                    >
+                      <span>{user.displayName}</span> LogOut
                     </Nav.Link>
                   ) : (
                     <Nav.Link as={NavLink} to="login">
