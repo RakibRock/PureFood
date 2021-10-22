@@ -18,8 +18,17 @@ import Service4 from "./components/Services/Service4";
 import Service5 from "./components/Services/Service5";
 import Service6 from "./components/Services/Service6";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [services, setServices] = useState({});
+
+  useEffect(() => {
+    fetch("fake.json")
+      .then((res) => res.json())
+      .then((data) => setServices(data));
+  }, []);
+
   return (
     <div className="">
       <AuthProvider>
@@ -62,7 +71,9 @@ function App() {
             <Route path="/register">
               <Register></Register>
             </Route>
-
+            <Route path="/login">
+              <Login></Login>
+            </Route>
             <Route path="*">
               <NotFound></NotFound>
             </Route>

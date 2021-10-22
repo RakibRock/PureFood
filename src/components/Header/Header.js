@@ -32,16 +32,6 @@ const Header = () => {
                     <NavDropdown.Item as={NavLink} to="/services">
                       All Services
                     </NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to="/service1">
-                      Service1
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">
-                      Something
-                    </NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.4">
-                      Separated link
-                    </NavDropdown.Item>
                   </NavDropdown>
                 </Nav>
                 <Nav>

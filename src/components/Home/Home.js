@@ -1,8 +1,10 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import About from "../About/About";
 import Banner from "../Banner/Banner";
 import Footer from "../Footer/Footer";
+
 import ServicesHome from "../ServicesHome/ServicesHome";
 import "./Home.css";
 
@@ -41,7 +43,8 @@ const Home = () => {
       {/* Services Section */}
       <ServicesHome></ServicesHome>
       <Banner></Banner>
-      <Footer></Footer>
+
+      <About></About>
     </div>
   );
 };
